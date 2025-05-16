@@ -1,0 +1,145 @@
+<!DOCTYPE Пример написания резюме html>
+<html lang="en-ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title> Resume </title>
+    <style>
+        body {
+            background-color: antiquewhite;
+            font-family: Arial, sans-serif;
+            margin-left: 300px;
+            padding: 20px;
+            display: flexbox;
+            justify-content: center;
+        }
+
+        .resume {
+            width: 800px;
+            height: auto;
+            background-color: #f0f0f0;
+            margin: 20px;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        .content-wrapper {
+            display: flex;
+            gap: 30px;
+            align-items: flex-start;
+        }
+
+        .resume-photo {
+            width: 50px;
+            height: 50px;
+            margin-left: 35px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            object-fit: cover;
+            border: 2px solid #fff;
+        }
+
+        .text-content {
+            flex: 1;
+        }
+
+        h2 {
+            font-style: normal;
+            color: #333;
+            text-align: center;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            width: 100%;
+        }
+       
+
+    </style>
+</head>
+
+<body>
+    <div class="Resume">
+        <header style="background-color: rgb(114, 131, 207);">
+        <h2 style="font-style: normal;">My resume</h2>
+        <img src="https://i.pinimg.com/280x280_RS/ed/ff/e3/edffe33c91a9e46140a262b3fd3a3b59.jpg" alt="mypict"
+            class="resume-photo" style="width: 100px; height: 100px;">
+        </header>
+          
+
+        <div class="content-wrapper">
+            <div class="text-content">
+                <h4><b>Mike Bederman</b></h4>
+                <h5>Date of birth: 12/06/1989</h5>
+                <h5>Phone number: +7XXX-XXX-XXX</h5>
+                <h5>Email: example@domain.com</h5>
+                <h5>Country: Russia</h5>
+                <h5>City: Chelyabinsk</h5>
+
+                <p><b>About myself</b></p>
+                <blockquote>Industrial designer, interior designer, photographer. I know graphic programs Corel
+                    draw, 3D
+                    max, Photoshop. And also handicrafts, pencil sketches, painting. In advertising works I can
+                    use a professional
+                    camera. I also do photography.</blockquote>
+                <p><b>My language skills:</b></p>
+                <table>
+                    <tr>
+                        <th>Language</th>
+                        <th>Read</th>
+                        <th>Write</th>
+                        <th>Speak</th>
+                        <th>Phone speak</th>
+
+                    </tr>
+                    <tr>
+                        <td>Russian</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                    <tr>
+                        <td>English</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+
+                </table>
+                <p style="border-bottom: 1px solid black;"><b>Work experiens</b>:</p>
+                <ul>
+                    <li>English Teacher, Park School, London - 2020-Present</li>
+                    <li>English Tutor, Online Tutoring Company, London - 2019-2020</li>
+                    <li> English Teacher, High School, London - 2015-2019</li>
+                </ul>
+                <p style="border-bottom: 1px solid black;"><b>Education:</b></p>
+                <ul>
+                    <li>MA in Education, London University, London - 2014</li>
+                    <li>BA in English, Oxford University, Oxford - 2012</li>
+                </ul>
+                <p style="border-bottom: 1px solid black;"><b>Skills:</b></p>
+                <ul>
+                    <li>Excellent communicator</li>
+                    <li>Problem solving skills</li>
+                    <li>Strong organizational skills</li>
+                </ul>
+                <p style="border-bottom: 1px solid black;"><b>Certifications:</b></p>
+                <ul>
+                    <li>Teaching English as a Foreign Language (TEFL) - 2018</li>
+                    <li>Teacher of English to Speakers of Other Languages (TESOL) - 2017</li>
+                </ul>
+
+            </div>
+
+
+
+
+</body>
+
+</html>

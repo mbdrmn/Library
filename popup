@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head> </head>
+  <body>
+    <li><a href="#login-popup">Sign in</a></li>
+
+    <!-- Popup форма -->
+    <div id="login-popup" class="popup-overlay">
+      <div class="popup-content">
+        <a href="#" class="close-btn">&times;</a>
+        <h2>Sign In</h2>
+        <form>
+          <input type="text" placeholder="Username or Email" />
+          <input type="password" placeholder="Password" />
+          <button type="submit">Sign In</button>
+          <p>Don't have an account? <a href="#register-popup">Register</a></p>
+        </form>
+      </div>
+    </div>
+
+    <style>
+      .popup-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.7);
+        display: none;
+        z-index: 9999;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .popup-overlay:target {
+        display: flex;
+      }
+
+      .popup-content {
+        background: white;
+        padding: 30px;
+        border-radius: 8px;
+        width: 350px;
+        position: relative;
+      }
+
+      .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: 24px;
+        color: #333;
+        text-decoration: none;
+      }
+
+      .popup-content form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .popup-content input {
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+      }
+
+      .popup-content button {
+        padding: 10px;
+        background: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+    </style>
+  </body>
+</html>

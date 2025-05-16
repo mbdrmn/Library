@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<title>DIV</title>
+
+<head>Lesson_div</head>
+
+<body>
+    <h4>Div lesson</h4>
+    <div>
+        <!-- Любой контент: текст, изображения, другие теги -->
+    </div>
+
+    <!--Пример с содержимым-->
+    <div>
+        <h2>Заголовок</h2>
+        <p>Абзац текста внутри div.</p>
+        <img src="image.jpg" alt="Пример">
+    </div>
+
+    <!--Основные атрибуты-->
+    class и id — для стилизации и JavaScript
+    style — инлайн-CSS
+    data-* — пользовательские атрибуты
+    <br>
+
+    <h4>Группировка элементов</h4>
+    <div class="news-block">
+        <h3>Новости</h3>
+        <p>Сегодня произошло важное событие...</p>
+    </div>
+    <br>
+
+    <h4>Верстка с CSS</h4>
+    <div style="background: #f0f0f0; padding: 20px; border-radius: 10px;">
+        <p>Стилизованный блок</p>
+    </div>
+    <br><br>
+
+    <h4>Стилизация <div> через CSS</h4>
+    div {
+    width: 300px; /* Ширина */
+    height: 200px; /* Высота */
+    background: #e0e0e0; /* Фон */
+    margin: 10px; /* Внешние отступы */
+    padding: 15px; /* Внутренние отступы */
+    border: 1px solid #000; /* Рамка */
+    border-radius: 5px; /* Закругление углов */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Тень */
+    }
+    <br>
+
+    <h3>Допонительные параметры</h3>
+    <!--Далее дополнительные настройки блочной(контейнер) стилизации отображения-->
+    body {
+    background-color: antiquewhite;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    }
+
+    .resume {
+    width: 600px;
+    min-height: 400px;
+    background-color: #f0f0f0;
+    margin: 20px;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .content-wrapper {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    }
+
+    .resume-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 5px;
+    object-fit: cover;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .text-content {
+    flex: 1;
+    }
+</body>
+
+</html>

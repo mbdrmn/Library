@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My simple calc</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <style>
+    input {
+      width: 70px;
+      height: auto;
+    }
+  </style>
+  <body style="background-color: antiquewhite">
+    <h2>Try to do your simple calc</h2>
+    <p>Your first number</p>
+    Num1: <input id="Num1" type="number" min="0" max="999" />
+    <p>Your second number</p>
+    Num2: <input id="Num2" type="number" min="0" max="999" />
+    <h2 id="result">Result:</h2>
+    <script>
+      function mycalculate() {
+        const num1 = Number(document.getElementById("Num1").value);
+        const num2 = Number(document.getElementById("Num2").value);
+        const result = num1 + num2;
+        document.getElementById("result").textContent = "Result: " + result;
+      }
+    </script>
+    <button type="button" onclick="mycalculate()">Summ+</button>
+  </body>
+</html>

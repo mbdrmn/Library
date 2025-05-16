@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TvTube Station</title>
+  </head>
+  <style>
+    body {
+      background-color: whitesmoke;
+      width: auto;
+      height: auto;
+    }
+
+    .header {
+      background-image: url(https://i.pinimg.com/736x/19/76/a4/1976a4f229fd55962ddbf784a7682756.jpg);
+      margin: 0%;
+      background-color: white;
+      text-align: center;
+      background-size: 10%;
+      background-position: center;
+      display: flex;
+      width: 100%;
+      height: 50%;
+      justify-content: left;
+    }
+    .h1 {
+      align-content: center;
+      font-size: xx-large;
+    }
+    .navbar {
+      background: #052659;
+      padding: 10px 20px;
+      height: 30%;
+      border-radius: 10px;
+    }
+    .nav-list {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+      width: 100%;
+    }
+    .nav-list a {
+      color: white;
+      text-decoration: none;
+      font-family: Arial, sans-serif;
+      padding: 5px 10px;
+      border-radius: 4px;
+    }
+    .nav-list a:hover {
+      background: #777;
+    }
+    aside {
+      width: 250px;
+      background: #f8f8f8;
+      grid-template-rows: auto auto;
+      row-gap: 1px;
+      border-right: 1px solid #ddd;
+      min-height: 100vh;
+      display: grid;
+      grid-template-rows: auto auto;
+    }
+    .ad {
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: -20px;
+    }
+    .ad img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .popup-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.7);
+      display: none;
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .popup-overlay:target {
+      display: flex;
+    }
+
+    .popup-content {
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      width: 350px;
+      position: relative;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 24px;
+      color: #333;
+      text-decoration: none;
+    }
+
+    .popup-content form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .popup-content input {
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+
+    .popup-content button {
+      padding: 10px;
+      background: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  </style>
+  <body>
+    <div class="header">
+      <h2 id="header" style="color: rgb(99, 70, 70)"></h2>
+    </div>
+    <nav class="navbar">
+      <h1 style="text-align: right; color: white">GameTubeStation</h1>
+      <ul class="nav-list">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Shorts</a></li>
+        <li><a href="#">Following</a></li>
+        <li><a href="#login-popup">Sign in</a></li>
+      </ul>
+      <div id="login-popup" class="popup-overlay">
+        <div class="popup-content" style="background-color: #006da4">
+          <a href="#" class="close-btn">&times;</a>
+          <h2>Sign In</h2>
+          <form>
+            <input type="text" placeholder="Username or Email" />
+            <input type="password" placeholder="Password" />
+            <button type="submit">Sign In</button>
+            <p>Don't have an account? <a href="#register-popup">Register</a></p>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <br />
+
+    <aside>
+      <div class="ad img">
+        <img
+          src="https://i.pinimg.com/736x/4f/f9/2e/4ff92e2041b79a67e7703c2d8055e754.jpg"
+        />
+      </div>
+    </aside>
+  </body>
+</html>

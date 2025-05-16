@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JS14_05</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <h2 style="color: brown"><i>hey everyone</i></h2>
+
+    <p id="JS"><b>First lesson of js</b></p>
+
+    <button
+      type="button"
+      onclick="document.getElementById('JS').innerHTML='hey again'"
+    >
+      Tap Me!
+    </button>
+
+    <h2>What Can JavaScript Do?</h2>
+
+    <p>JavaScript can change HTML attribute values.</p>
+
+    <p>
+      In this case JavaScript changes the value of the src (source) attribute of
+      an image.
+    </p>
+
+    <button
+      onclick="document.getElementById('myImage').src='https://i.pinimg.com/originals/a7/b0/15/a7b015d343ad801ad6da8c242dc6ae06.gif'"
+    >
+      Turn1
+    </button>
+
+    <img id="myImage" style="width: 100px" />
+
+    <button
+      onclick="document.getElementById('myImage').src='https://i.pinimg.com/originals/76/15/25/76152559c87cac789456ca610ba92b6f.gif'"
+    >
+      Turn2
+    </button>
+
+  
+    
+
+
+</html>
