@@ -8,8 +8,14 @@
   <style>
     body {
       background-color: whitesmoke;
-      width: auto;
-      height: auto;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      background-image: url(https://i.pinimg.com/736x/4e/c3/82/4ec382391a4ebd4d71500f8f18215be2.jpg);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
     }
 
     .header {
@@ -52,6 +58,7 @@
     }
     aside {
       width: 250px;
+      height: 100%;
       background: #f8f8f8;
       grid-template-rows: auto auto;
       row-gap: 1px;
@@ -130,6 +137,65 @@
       border-radius: 4px;
       cursor: pointer;
     }
+    .main-content {
+      display: flex;
+      flex: 1;
+    }
+    .content-wrapper {
+      flex: 1;
+      padding: 20px;
+    }
+
+    .videos-grid {
+      display: grid;
+      width: auto;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 5px;
+      margin: 0 auto;
+      margin-left: 0;
+      max-width: 1200px;
+    }
+
+    .video-card {
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .video-thumbnail {
+      width: 100%;
+      height: 50%;
+      background: #010307;
+      position: relative;
+    }
+
+    .video-thumbnail iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .video-info {
+      padding: 12px;
+    }
+
+    .video-title {
+      font-weight: bold;
+      margin-bottom: 6px;
+      font-size: 14px;
+    }
+
+    .video-channel {
+      font-size: 12px;
+      color: #555;
+    }
+
+    .video-stats {
+      font-size: 12px;
+      color: #777;
+      margin-top: 4px;
+    }
   </style>
   <body>
     <div class="header">
@@ -157,13 +223,90 @@
       </div>
     </nav>
     <br />
-
-    <aside>
-      <div class="ad img">
-        <img
-          src="https://i.pinimg.com/736x/4f/f9/2e/4ff92e2041b79a67e7703c2d8055e754.jpg"
-        />
+    <div class="main-content">
+      <aside>
+        <div class="ad img">
+          <img
+            src="https://i.pinimg.com/736x/4f/f9/2e/4ff92e2041b79a67e7703c2d8055e754.jpg"
+          />
+        </div>
+      </aside>
+      <div class="videos-grid">
+        <div class="video-thumbnail">
+          <iframe
+            width="880"
+            height="495"
+            src="https://www.youtube.com/embed/vVPXrBcVeLk"
+            title="High Art Event Pass | Call of Duty: Warzone &amp; Black Ops 6"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div class="video-thumbnail">
+          <iframe
+            width="880"
+            height="495"
+            src="https://www.youtube.com/embed/8_JtCQeKbB0"
+            title="Season 03 Reloaded Multiplayer Maps | Call of Duty: Black Ops 6"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div class="video-thumbnail">
+          <div class="video-info">
+            <iframe
+              width="800"
+              height="495"
+              src="https://www.youtube.com/embed/n4b8FRUDNZo"
+              title="Call of Duty®: Mobile - Official Launch Trailer"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+        <div class="video-thumbnail">
+          <iframe
+            width="800"
+            height="495"
+            src="https://www.youtube.com/embed/tsQabRUoDVg"
+            title="StarCraft: «Мультяшки» — уже в продаже"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div class="video-thumbnail">
+          <iframe
+            width="1010"
+            height="568"
+            src="https://www.youtube.com/embed/S2zRbIZV3hg"
+            title="Diablo II: Resurrected | Трейлер"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div class="video-thumbnail">
+          <iframe
+            width="1010"
+            height="568"
+            src="https://www.youtube.com/embed/ospT1rp33MQ"
+            title="DOOM: The Dark Ages | Official Launch Trailer (4K) | Available Now"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
       </div>
-    </aside>
+    </div>
   </body>
 </html>
