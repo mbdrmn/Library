@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en-ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ABC for students</title>
+  </head>
+  <style>
+    body {
+      background-color: rgb(123, 174, 228);
+    }
+    input {
+      width: 200px;
+      height: 35px;
+    }
+    button {
+      background-color: rgb(12, 198, 111);
+      border-radius: 10px;
+      width: 200px;
+      height: 41px;
+    }
+  </style>
+  <body>
+    <p>
+      Балл студента:
+      <input
+        id="input"
+        type="number"
+        min="0"
+        max="100"
+        placeholder="Полученный балл"
+      />
+      <button id="button" type="button" onclick="checkGrade()">
+        <b>Проверить:</b>
+      </button>
+    </p>
+    <p id="result">Оценка студента: введите балл и нажмите "Проверить"</p>
+
+    <p id="grade5"></p>
+    <p id="grade4"></p>
+    <p id="grade3"></p>
+    <p id="grade1"></p>
+    <script>
+      function checkGrade() {
+        const score = parseInt(document.getElementById("input").value);
+        document.getElementById("grade5").innerHTML = "";
+        document.getElementById("grade4").innerHTML = "";
+        document.getElementById("grade3").innerHTML = "";
+        document.getElementById("grade1").innerHTML = "";
+        if (score >= 90) {
+          document.getElementById("grade5").innerHTML = "Отлично";
+        } else if (score >= 80) {
+          document.getElementById("grade4").innerHTML = "Хорошо";
+        } else if (score >= 70) {
+          document.getElementById("grade3").innerHTML = "Удовлетворительно";
+        } else if (score < 70) {
+          document.getElementById("grade1").innerHTML = "Неудовлетворительно";
+        }
+      }
+    </script>
+  </body>
+</html>
