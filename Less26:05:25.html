@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Start</title>
+  </head>
+  <body>
+    <h1>JavaScript Arithmetic</h1>
+    <h2>The * Operator</h2>
+
+    <p id="TotalPrice"></p>
+    <p id="TaxPrice"></p>
+
+    <script>
+      let x = 2000;
+      let y = 4;
+      let a = 10;
+      let z = (x * y) / 100;
+      let c = (x * a) / 100;
+      let b = x - z;
+      let d = x - c;
+      document.getElementById("TotalPrice").innerHTML = d;
+      document.getElementById("TaxPrice").innerHTML = b;
+    </script>
+    <br />
+    <h1>JavaScript Arrays</h1>
+
+    <p id="First"></p>
+
+    <script>
+      const grade = [12, 13, 15];
+      document.getElementById("First").innerHTML = grade;
+    </script>
+  </body>
+</html>
