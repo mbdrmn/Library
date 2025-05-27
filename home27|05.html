@@ -22,11 +22,12 @@
           name="cardPayment"
           value="1"
           checked
-      /></label>
+        />
+      </label>
     </p>
 
     <script>
-      productprice = [100, 100, 300];
+      productprice = [12100, 100, 300];
       let sumprice = productprice[0] + productprice[1] + productprice[2];
       document.getElementById("sumprice").innerText = sumprice;
 
@@ -46,8 +47,7 @@
       if (document.getElementById("cardPayment").checked) {
         discount1 = ((sumprice - discount) * 1.5) / 100;
       }
-      document.getElementById("discount1").innerText =
-        "discount1: " + discount1;
+      document.getElementById("discount1").innerText = discount1;
     </script>
   </body>
 </html>
