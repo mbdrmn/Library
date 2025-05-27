@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Калькулятор цен кассира</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f5f5f5;
+      }
+      .container {
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      .input-field {
+        margin: 10px 0;
+      }
+      input {
+        padding: 8px;
+        width: 100%;
+        box-sizing: border-box;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+      }
+      button {
+        height: 50px;
+        width: 200px;
+        background-color: rgb(141, 253, 141);
+        border-radius: 10px;
+      }
+      .checkbox-container {
+        margin: 15px 0;
+        display: flexbox;
+      }
+      .checkbox-container label {
+        margin-left: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Калькулятор цен кассира</h2>
+      <div class="input-field">
+        <p id="prices-label">Введите цены товаров (через запятую):</p>
+        <input type="text" id="prices" value="200, 300, 400" />
+
+        <div class="output">
+          <p id="count">Общее количество товаров:</p>
+          <p id="totalprice">Общая сумма без скидок и налогов:</p>
+          <p id="tax">Налог 2.5%:</p>
+          <p id="discount">Скидка 4%:</p>
+          <p id="discount1">Доп. скидка за карту (1.5%):</p>
+          <p>
+            Оплата картой Да/Нет:
+            <label>
+              <input
+                type="checkbox"
+                id="cardPayment"
+                name="cardPayment"
+                value="1"
+                checked
+              />
+            </label>
+          </p>
+          <p id="finalprice">Итоговая сумма к оплате:</p>
+        </div>
+        <button type="button" id="result">Рассчитать</button>
+        <br />
+      </div>
+    </div>
+    <script>
+ 
+    </script>
+  </body>
+</html>
