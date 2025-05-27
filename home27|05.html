@@ -1,46 +1,53 @@
 <!DOCTYPE html>
 <html lang="ru">
- <head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Калькулятор цен кассира</title>
- </head>
-<body>
+  </head>
+  <body>
+    <h2>Калькулятор кассира</h2>
 
-<h2>Калькулятор кассира</h2>
+    <p id="sumprice">sumprice:</p>
+    <p id="discount">discount</p>
+    <p id="tax">tax</p>
+    <p id="finalprice">finalprice</p>
+    <p id="discount1">discount1</p>
+    <p>
+      Оплата картой Да/Нет:
+      <label>
+        <input
+          type="checkbox"
+          id="cardPayment"
+          name="cardPayment"
+          value="1"
+          checked
+      /></label>
+    </p>
 
-<p id="sumprice">sumprice:</p>
-<p id="discount">discount</p>
-<p id="tax">tax</p>
-<p id="finalprice">finalprice</p>
-<p id="discount1">discount1</p>
-<p>Оплата картой Да/Нет:
-<label>
-<input type="checkbox" id="cardPayment" name="cardPayment" value="1" checked></label></p>
-
-<script>
+    <script>
       productprice = [100, 100, 300];
       let sumprice = productprice[0] + productprice[1] + productprice[2];
       document.getElementById("sumprice").innerText = sumprice;
-      
+
       let discount = 0;
       if (sumprice >= 1000) {
         discount = (sumprice * 4) / 100;
       }
       document.getElementById("discount").innerText = discount;
-      
+
       let tax = ((sumprice - discount) * 2.5) / 100;
       document.getElementById("tax").innerText = tax;
-      
+
       let finalprice = sumprice - discount + tax;
       document.getElementById("finalprice").innerText = finalprice;
-      
-    let discount1 = 0;
+
+      let discount1 = 0;
       if (document.getElementById("cardPayment").checked) {
         discount1 = ((sumprice - discount) * 1.5) / 100;
       }
-      document.getElementById("discount1").innerText = "discount1: " + discount1;
+      document.getElementById("discount1").innerText =
+        "discount1: " + discount1;
     </script>
-
-</body>
+  </body>
 </html>
