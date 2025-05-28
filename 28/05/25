@@ -1,28 +1,32 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>JS data types</title>
-</head>
+    <head>
+
+    </head>
 <body>
 
 <p>Call a function which performs a calculation and returns the result:</p>
 
-<p id="lesson"></p>
+<p>См <input id="sant" type="number"> <input type="number"> inch <button type="button" onclick="myCalculate('Inch')">result</button></p>
+<p>inch <input id="myinch" type="number"> <input type="number"> См <button type="button" onclick="myCalculate('CM')">result</button></p>
 
 <script>
-function myFunction(p1, p2) {
-  return p1 + p2;
+function myCalculate() {
+const sant = Number(document.getElementById("sant").value);
+const myinch = Number(document.getElementById("myinch").value);
+
+
+    }
+function toCM(inch) {
+return ("inch")/2.54;
+    }
+
+function toInch(CM) {
+  return ("sant") * 0.394;
 }
 
-let result = myFunction(5, 3);
-document.getElementById("lesson").innerHTML = result;
-<!--Другой вариант написания-->
-document.getElementById("lesson").innerHTML = myFunction(5, 3);
+
 </script>
 
 </body>
 </html>
-
-
