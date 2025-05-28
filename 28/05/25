@@ -7,20 +7,22 @@
 
 <p>Call a function which performs a calculation and returns the result:</p>
 
-<p>См <input id="sant" type="number"> <input type="number"> inch <button type="button" onclick="myCalculate('Inch')">result</button></p>
+<p>См <input id="sant" type="number"> <input type="number"> inch <button type="button" onclick="myCalculate">result</button></p>
 <p>inch <input id="myinch" type="number"> <input type="number"> См <button type="button" onclick="myCalculate('CM')">result</button></p>
 
 <script>
 function myCalculate() {
 const sant = Number(document.getElementById("sant").value);
 const myinch = Number(document.getElementById("myinch").value);
-}
+
+
+    }
 function toCM(inch) {
-return ("inch")/2.54;
+return (inch)/2.54;
     }
 
 function toInch(CM) {
-  return ("sant") * 0.394;
+  return (sant) * 0.394;
 }
 
 
