@@ -14,9 +14,7 @@
 function myCalculate() {
 const sant = Number(document.getElementById("sant").value);
 const myinch = Number(document.getElementById("myinch").value);
-
-
-    }
+}
 function toCM(inch) {
 return ("inch")/2.54;
     }
