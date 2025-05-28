@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>JS data types</title>
+</head>
+<body>
+
+<p>Call a function which performs a calculation and returns the result:</p>
+
+<p id="lesson"></p>
+
+<script>
+function myFunction(p1, p2) {
+  return p1 + p2;
+}
+
+let result = myFunction(5, 3);
+document.getElementById("lesson").innerHTML = result;
+</script>
+
+</body>
+</html>
+
+
