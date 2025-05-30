@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>home30\05\25</title>
+  </head>
+  <body>
+    <p id="quantity">Количество:</p>
+    <p id="sale4">Скидка4%:</p>
+    <p id="sale1.5">Скидка1.5%</p>
+    <p id="tax">Налог:</p>
+    <p id="firstPrice">Стоимость1:</p>
+    <p id="lastPrice">Стоимость2:</p>
+    <p id="cardPayment"><input type="checkbox" value="0" />Оплата картой</p>
+    <input
+      type="button"
+      id="calculate"
+      onclick="displayResult()"
+      value="Рассчет:"
+    />
+    <br />
+    <script>
+      var productPrice = [20, 50, 70, 125, 540];
+      var taxPercent = 2.5;
+
+      function displayResult() {
+        var quantity = productPrice.length;
+        var firstPrice = productPrice.reduce((sum, price) => sum + price, 0);
+        var sale4 = firstPrice > 1000 ? 4 : 0;
+        var cardCheckbox = document.querySelector("#cardPayment input");
+        var sale1_5 = cardCheckbox.checked ? 1.5 : 0;
+        var priceAfterDiscounts = firstPrice;
+        priceAfterDiscounts *= 1 - sale4 / 100;
+        priceAfterDiscounts *= 1 - sale1_5 / 100;
+        var taxAmount = priceAfterDiscounts * (taxPercent / 100);
+        var lastPrice = priceAfterDiscounts + taxAmount;
+        document.getElementById("quantity").textContent =
+          "Количество: " + quantity;
+        document.getElementById("sale4").textContent =
+          "Скидка4%: " + sale4 + "%";
+        document.getElementById("sale1.5").textContent =
+          "Скидка1.5%: " + sale1_5 + "%";
+        document.getElementById("tax").textContent =
+          "Налог: " + taxPercent + "%";
+        document.getElementById("firstPrice").textContent =
+          "Стоимость1: " + firstPrice + " руб";
+        document.getElementById("lastPrice").textContent =
+          "Стоимость2: " + lastPrice.toFixed(2) + " руб";
+      }
+      window.onload = displayResult;
+    </script>
+  </body>
+</html>
