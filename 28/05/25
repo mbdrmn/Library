@@ -31,32 +31,3 @@ function toInch(CM) {
 </body>
 </html>
 
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Конвертер единиц</title>
-    </head>
-<body>
-
-<p>Call a function which performs a calculation and returns the result:</p>
-
-<p>См <input id="sant" type="number"> = <input id="inchResult" type="number" readonly> inch <button type="button" onclick="convertToInch()">result</button></p>
-<p>inch <input id="myinch" type="number"> = <input id="cmResult" type="number" readonly> См <button type="button" onclick="convertToCm()">result</button></p>
-
-<script>
-function convertToInch() {
-    const cm = Number(document.getElementById("sant").value);
-    const inches = cm * 0.393701; // 1 см = 0.393701 дюйма
-    document.getElementById("inchResult").value = inches.toFixed(2);
-}
-
-function convertToCm() {
-    const inches = Number(document.getElementById("myinch").value);
-    const cm = inches * 2.54; // 1 дюйм = 2.54 см
-    document.getElementById("cmResult").value = cm.toFixed(2);
-}
-</script>
-
-</body>
-</html>
-
