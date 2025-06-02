@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>home02\06\25</title>
+  </head>
+  <body>
+    <h2>JavaScript For Loop</h2>
+
+    <p id="product"></p>
+    <p id="summ"></p>
+    <script>
+      productPrice = [20, 30, 40, 50, 500];
+      let sum = 0;
+      for (let i = 0; i < productPrice.length; i++) {
+        document.getElementById("product").innerHTML +=
+          productPrice[i] + "<br>";
+        sum += productPrice[i];
+      }
+      document.getElementById("summ").innerHTML = "Total: " + sum;
+    </script>
+
+    <h2>JavaScript For Loop</h2>
+    <p id="sumRes"></p>
+    <input type="button" value="calc" onclick="displayResult()" />
+    <script>
+      productPrice = [200, 300, 400, 500, 600];
+      function displayResult() {
+        document.getElementById("sumRes").innerHTML =
+          "Total: " + calcTotal(productPrice) + "<br>";
+      }
+      function calcTotal(array) {
+        let sum = 0;
+        for (let i = 0; i < array.length; i++) {
+          sum += array[i];
+        }
+        return sum;
+      }
+    </script>
+
+    <h2>JavaScript For Loop</h2>
+    <p id="sumRes"></p>
+    <p id="quan"></p>
+    <input type="button" value="calc" onclick="displayResult()" />
+    <script>
+      productPrice = [200, 300, 400, 500, 600];
+      quantity = [1, 2, 3, 4, 5];
+      function displayResult() {
+        document.getElementById("sumRes").innerHTML =
+          "Total: " + calcTotal(productPrice, quantity);
+        document.getElementById("quan").innerHTML =
+          "Total quantity: " + calcQuantity(quantity);
+        function calcTotal(prices, quantities) {
+          let sum = 0;
+          for (let i = 0; i < prices.length; i++) {
+            sum += prices[i] * quantities[i];
+          }
+          return sum;
+        }
+        function calcQuantity(quantities) {
+          let total = 0;
+          for (let i = 0; i < quantities.length; i++) {
+            total += quantities[i];
+          }
+          return total;
+        }
+      }
+    </script>
+  </body>
+</html>
