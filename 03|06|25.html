@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Список товаров</title>
+    <style>
+      table,
+      td,
+      th {
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 8px;
+        text-align: left;
+      }
+      th {
+        background-color: #f2f2f2;
+      }
+      input[type="button"] {
+        padding: 8px 16px;
+        margin-top: 10px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Список товаров</h2>
+    <table id="productTable">
+      <tr>
+        <th>№</th>
+        <th>Название</th>
+        <th>Цена</th>
+        <th>Кол-во</th>
+        <th>Сумма</th>
+      </tr>
+    </table>
+    <p id="totalSum"><b>Общая сумма:</b> -</p>
+    <p id="totalQuantity"><b>Всего товаров:</b> -</p>
+    <input type="button" value="Показать товары" onclick="fillTable()" />
+
+    <script>
+      const products = [
+        { name: "Ноутбук", price: 500, quantity: 2 },
+        { name: "Телефон", price: 300, quantity: 3 },
+        { name: "Наушники", price: 100, quantity: 5 },
+        { name: "Планшет", price: 400, quantity: 1 },
+        { name: "Монитор", price: 250, quantity: 4 },
+      ];
+      function fillTable() {
+        const table = document.getElementById("productTable");
+        const totalSumElement = document.getElementById("totalSum");
+        const totalQuantityElement = document.getElementById("totalQuantity");
+        while (table.rows.length > 1) {
+          table.deleteRow(1);
+        }
+        let totalSum = 0;
+        let totalQuantity = 0;
+        products.forEach((product, index) => {
+          const row = table.insertRow();
+          const sum = product.price * product.quantity;
+
+          row.insertCell(0).textContent = index + 1;
+          row.insertCell(1).textContent = product.name;
+          row.insertCell(2).textContent = product.price;
+          row.insertCell(3).textContent = product.quantity;
+          row.insertCell(4).textContent = sum;
+
+          totalSum += sum;
+          totalQuantity += product.quantity;
+        });
+        totalSumElement.innerHTML = "<b>Общая сумма:</b> " + totalSum;
+        totalQuantityElement.innerHTML =
+          "<b>Всего товаров:</b> " + totalQuantity;
+      }
+    </script>
+  </body>
+</html>
