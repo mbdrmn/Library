@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Сумма и среднее чисел</title>
+  </head>
+  <body>
+    <h2>Введите числа через запятую:</h2>
+    <input
+      type="text"
+      id="inputNumbers"
+      placeholder="Например: 5, 6, 7, 8, 16"
+    />
+    <button onclick="calculate()">Посчитать</button>
+
+    <div id="output"></div>
+
+    <script>
+      function calculate() {
+        // 1. Получаем введенную строку из поля ввода
+        let inputString = document.getElementById("inputNumbers").value;
+
+        // 2. Разделяем строку по запятым, получаем массив строк
+        let stringArray = inputString.split(",");
+
+        // 3. Создаем массив для чисел
+        let numberArray = [];
+        let sum = 0;
+
+        // 4. Перебираем все элементы
+        for (let i = 0; i < stringArray.length; i++) {
+          // Удаляем пробелы в начале и конце
+          let item = stringArray[i].trim();
+
+          // Пробуем преобразовать в число
+          let number = parseFloat(item);
+
+          // Проверяем, что это действительно число
+          if (!isNaN(number)) {
+            numberArray.push(number); // Добавляем в массив чисел
+            sum += number; // Считаем сумму
+          }
+        }
+
+        // 5. Вычисляем среднее
+        let average = numberArray.length > 0 ? sum / numberArray.length : 0;
+
+        // 6. Формируем результат
+        let result = `
+                <p>Числа: [${numberArray.join(", ")}]</p>
+                <p>Количество: ${numberArray.length}</p>
+                <p>Сумма: ${sum}</p>
+                <p>Среднее: ${average.toFixed(2)}</p>
+            `;
+
+        // 7. Выводим результат
+        document.getElementById("output").innerHTML = result;
+      }
+    </script>
+  </body>
+</html>
