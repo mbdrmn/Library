@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <input type="text" id="input" placeholder="Введите числа" />
+    <button onclick="calculate()">Посчитать</button>
+    <p id="result"></p>
+
+    <script>
+      function calculate() {
+        // 1. Получаем введённый текст из поля
+        var input = document.getElementById("input").value;
+        // 2. Разбиваем строку по запятым и делаем числами
+        var numbers = input.split(",").map(Number);
+        // 3. Считаем сумму всех чисел
+        var sum = 0;
+        for (var i = 0; i < numbers.length; i++) {
+          sum += numbers[i];
+        }
+        // 4. Вычисляем среднее значение
+        var average = sum / numbers.length;
+
+        document.getElementById("result").innerHTML =
+          "Чисел: " +
+          numbers.length +
+          "<br>" +
+          "Сумма: " +
+          sum +
+          "<br>" +
+          "Среднее: " +
+          average.toFixed(2);
+      }
+    </script>
+  </body>
+</html>
