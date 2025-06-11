@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Start</title>
+  </head>
+  <body>
+    <input type="file" id="FileReader" onchange="OnFileLoad()"/>
+    <div id="FileContent">your content will apper here</div>
+    <script>
+      function OnFileLoad() {
+        var file = document.getElementById("FileReader").files[0];
+        var textType = /text.*/;
+        var fileDisplayArea = document.getElementById("FileContent");
+        if (file.type.match(textType)) {
+          var reader = new FileReader();
+          reader.onload = function (e) {
+            fileDisplayArea.innerText = reader.result;
+            }
+            
+          reader.readAsText(file);
+        } else {
+          fileDisplayArea.innerText = "File not founded!"
+        }
+      }
+      
+
+      </script>
+  </body>
+</html>
