@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Data base</title>
+  </head>
+  <body>
+    <h1>Поиск сотрудников</h1>
+
+    <input id="name" placeholder="Имя" />
+    <input id="number" placeholder="Номер" type="number" />
+
+    <button onclick="addPerson()">Добавить</button>
+    <button onclick="findName()">Найти номер</button>
+    <button onclick="findNumber()">Найти имя</button>
+    <button onclick="showAll()">Показать всех</button>
+    <button onclick="deletePerson()">Удалить</button>
+    <button onclick="clearAll()">Очистить</button>
+
+    <p id="result"></p>
+
+    <script>
+      const people = new Map([
+        ["Mike", 1],
+        ["Gilles", 2],
+        ["PL", 3],
+      ]);
+      function addPerson() {
+        const name = document.getElementById("name").value.trim();
+        const number = +document.getElementById("number").value;
+        const result = document.getElementById("result");
+        if (!name || isNaN(number)) {
+          result.innerText = "Ошибка: введите имя и номер";
+          return;
+        }
+        if (people.has(name)) {
+          result.innerText = `Сотрудник "${name}" уже есть`;
+        } else {
+          people.set(name, number);
+          result.innerText = `Добавлен: ${name} (${number})`;
+        }
+      }
+      function findName() {
+        const name = document.getElementById("name").value.trim();
+        const result = document.getElementById("result");
+        result.innerText = people.get(name) || "Не найдено";
+      }
+      function findNumber() {
+        const number = +document.getElementById("number").value;
+        const result = document.getElementById("result");
+        for (const [name, num] of people) {
+          if (num === number) {
+            result.innerText = name;
+            return;
+          }
+        }
+        result.innerText = "Не найдено";
+      }
+      function showAll() {
+        const result = document.getElementById("result");
+        result.innerText = people.size
+          ? [...people].map(([name, num]) => `${name}: ${num}`).join(", ")
+          : "Список пуст";
+      }
+      function deletePerson() {
+        const name = document.getElementById("name").value.trim();
+        const result = document.getElementById("result");
+        if (people.delete(name)) {
+          result.innerText = `Удалён: ${name}`;
+        } else {
+          result.innerText = "Не найден";
+        }
+      }
+      function clearAll() {
+        people.clear();
+        document.getElementById("result").innerText = "Список очищен";
+      }
+    </script>
+  </body>
+</html>
