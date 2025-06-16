@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>Поиск сотрудников</h1>
+    <input id="name" placeholder="Имя" />
+    <button onclick="find()">Найти номер</button>
+
+    <input id="number" placeholder="Номер" type="number" />
+    <button onclick="find()">Найти имя</button>
+
+    <p id="result"></p>
+    <script>
+      const people = {
+        Mike: 1,
+        Gilles: 2,
+        PL: 3,
+      };
+      function find() {
+        const name = document.getElementById("name").value;
+        const number = document.getElementById("number").value;
+        const result = document.getElementById("result");
+        if (name) {
+          result.innerText = people[name] || "";
+        } else if (number) {
+          for (let n in people) {
+            if (people[n] == number) {
+              result.innerText = n;
+              return;
+            }
+          }
+          result.innerText = "";
+        }
+      }
+    </script>
+  </body>
+</html>
