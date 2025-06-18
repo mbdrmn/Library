@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSV Viewer</title>
+  </head>
+  <style>
+    body {
+      background-color: rgb(233, 230, 227);
+    }
+    h1 {
+      text-align: center;
+    }
+    button {
+      width: 115px;
+      color: black;
+    }
+  </style>
+  <body>
+    <h1>Data Base</h1>
+    <input type="file" id="csvFile" accept=".csv" />
+    <br /><br />
+    <button onclick="readFile()">Load</button>
+    <button onclick="add()">Add</button>
+    <table id="csvTable" border="1"></table>
+
+    <script>
+      function readFile() {
+        const file = document.getElementById("csvFile").files[0]; //Получили выбранный файл/
+        const reader = new FileReader(); //Создаем обьект для чтения нашего файла/
+        reader.onload = (e) => displayData(e.target.result); //Загрузка/
+        reader.readAsText(file); // Читаем файл как текст/
+      }
+
+      function displayData(csvText) {
+        const lines = csvText.split(/\r\n|\n/); //Делим текст на строки/
+        const headers = lines[0].split(","); //Получаем заголовок из первой строки/
+        let tableHTML = //Создаем HTML для строки заголовков таблицы с помощью map()/
+          "<tr>" + headers.map((h) => `<th>${h}</th>`).join("") + "</tr>";
+        //Функция для каждого заголовка создает ячейку заголовка (<th>)/
+
+        for (let i = 1; i < lines.length; i++) {
+          const row = lines[i].split(",");
+          if (row.length === headers.length) {
+            tableHTML +=
+              "<tr>" + row.map((c) => `<td>${c}</td>`).join("") + "</tr>";
+            // Та же функция только про строки таблицы/
+          }
+        }
+        document.getElementById("csvTable").innerHTML = tableHTML; //Вставляет готовый HTML в таблицу через innerHTML/
+      }
+    </script>
+  </body>
+</html>
