@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Start</title>
+  </head>
+  <body>
+<p id="demo"></p>
+<p id="res"></p>
+
+<script>
+  //JS Class Syntax
+class Car {
+  constructor(name, year) {
+    this.name = name;
+    this.year = year;
+
+  }
+  age() {
+    const date = new Date();
+    return date.getFullYear() - this.year;
+  }
+  add(x,y){
+  return x+y;}
+}
+
+const myCar = new Car("Ford", 2014);
+
+document.getElementById("demo").innerHTML =
+"My car is " + myCar.age() + " years old.";
+document.getElementById("res").innerHTML =
+"sum is " + myCar.add(5,6);
+
+
+//JSON/
+let text = '{"employees":[' +
+'{"firstName":"Gilles","lastName":"Goupil","Country":"CA" },' +
+'{"firstName":"PL","lastName":"Blanchete","Country":"USA" },' +
+'{"firstName":"Michael","lastName":"Bederman","Country":"Rus"}]}';
+
+const obj = JSON.parse(text);//.parce для преобразования JSON обратно в объект/
+document.getElementById("demo").innerHTML =
+obj.employees[1].firstName + " " + obj.employees[1].lastName + " " + obj.employees[1].Country;
+</script>
+  </body>
+</html>
