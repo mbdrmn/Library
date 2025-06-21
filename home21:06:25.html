@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>homework_21/06/25</title>
+  </head>
+  <style>
+    body {
+      background-color: antiquewhite;
+    }
+    h2 {
+      text-align: center;
+    }
+    .myContainer {
+      float: left;
+      overflow: auto;
+      display: flex;
+      gap: 10px;
+    }
+    .Age {
+      background-color: rgb(101, 235, 164);
+      padding-left: 5px;
+      border-radius: 10px;
+      border: black solid;
+    }
+    .Product {
+      background-color: rgb(158, 238, 241);
+      padding-left: 5px;
+      border-radius: 10px;
+      border: black solid;
+    }
+    .dateBetween {
+      background-color: coral;
+      padding-left: 5px;
+      border-radius: 10px;
+      border: black solid;
+    }
+  </style>
+  <body>
+    <h2>Homework in JS</h2>
+    <div class="myContainer">
+      <div class="Age">
+        <h3>Возраст</h3>
+        <input type="number" id="year" placeholder="Ваш год рождения" />
+        <button onclick="dateCalculator.calculateAge()">Tap on me</button>
+        <p id="ageResult"></p>
+      </div>
+
+      <div class="Product">
+        <h3>Срок годности</h3>
+        <input type="date" id="startDate" />
+        <input type="number" id="days" placeholder="Срок в днях" />
+        <button onclick="dateCalculator.calculateEndDate()">Tap on me</button>
+        <p id="endDateResult"></p>
+      </div>
+
+      <div class="dateBetween">
+        <h3>Разница между датами</h3>
+        <input type="date" id="date1" />
+        <input type="date" id="date2" />
+        <button onclick="dateCalculator.calculateDayDifference()">
+          Tap on me
+        </button>
+        <p id="diffResult"></p>
+      </div>
+    </div>
+    <script>
+      // Класс для простых вычислений с датами
+      class SimpleDateCalc {
+        // Метод для вычисления возраста по году рождения
+        calculateAge() {
+          // Получаем год рождения из input с id="year"
+          const birthYear = document.getElementById("year").value;
+          // Получаем текущий год
+          const currentYear = new Date().getFullYear();
+          // Выводим результат в элемент с id="ageResult"
+          document.getElementById("ageResult").textContent = `Вам: ${
+            currentYear - birthYear
+          } лет`;
+        }
+        calculateEndDate() {
+          // Метод для вычисления конечной даты (стартовая дата + дни)
+          const startDate = new Date(
+            document.getElementById("startDate").value
+          );
+          // Получаем количество дней из input с id="days"
+          const days = Number(document.getElementById("days").value);
+          // Добавляем дни к стартовой дате
+          startDate.setDate(startDate.getDate() + days);
+          // Выводим результат в элемент с id="endDateResult"
+          document.getElementById(
+            "endDateResult"
+          ).textContent = `Конечная дата: ${startDate.toLocaleDateString()}`;
+        }
+        // Метод для вычисления разницы между двумя датами (в днях)
+        calculateDayDifference() {
+          // Получаем первую дату из input с id="date1"
+          const date1 = new Date(document.getElementById("date1").value);
+          // Получаем вторую дату из input с id="date2"
+          const date2 = new Date(document.getElementById("date2").value);
+          document.getElementById(
+            "diffResult"
+          ).textContent = `Разница: ${Math.round(diff)} дней`;
+        }
+      }
+      // Создаем экземпляр класса для использования
+      const dateCalculator = new SimpleDateCalc();
+    </script>
+  </body>
+</html>
