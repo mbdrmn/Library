@@ -1,33 +1,194 @@
-<!-- Создание базовой структуры HTML5 документа -->
 <!DOCTYPE html>
+<!-- Объявление типа документа -->
 <html lang="ru">
+  <!-- Корневой элемент с указанием языка -->
   <head>
     <meta charset="UTF-8" />
+    <!-- Кодировка документа -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Документ</title>
+    <!-- Для адаптивности -->
+    <title>Заголовок страницы</title>
+    <!-- Title для SEO и вкладки браузера -->
     <link rel="stylesheet" href="styles.css" />
+    <!-- Подключение CSS -->
+    <script src="script.js" defer></script>
+    <!-- Подключение JS (defer для отложенной загрузки) -->
   </head>
   <body>
-    <!-- Действие: Создает основную структуру каждого HTML-документа -->
+    <!-- Содержимое страницы -->
   </body>
 </html>
 
-<!-- Семантические теги для улучшения структуры -->
+Семантические теги (HTML5)
 <header>Шапка сайта</header>
 <nav>Навигационное меню</nav>
 <main>
-  <article>Самостоятельная статья</article>
-  <section>Раздел контента</section>
+  <!-- Основное содержимое (должен быть один на странице) -->
+  <article>Самостоятельный раздел контента (пост, статья)</article>
+  <section>Логический раздел документа</section>
+  <aside>Боковая колонка, дополнительная информация</aside>
 </main>
-<aside>Боковая панель</aside>
 <footer>Подвал сайта</footer>
-<!-- Действие: Улучшает SEO и доступность, описывая структуру страницы -->
 
-<!-- Форма с валидацией -->
-<form>
-  <input type="text" placeholder="Имя" required />
-  <input type="email" placeholder="Email" required />
-  <input type="password" placeholder="Пароль" minlength="6" />
-  <input type="submit" value="Отправить" />
+<!-- Для лендингов: -->
+<header>
+  <h1>Главный заголовок</h1>
+  <p>Описание</p>
+</header>
+<section id="features">
+  <h2>Особенности</h2>
+  <!-- Контент -->
+</section>
+
+Формы и инпуты
+<form action="/submit" method="POST" enctype="multipart/form-data">
+  <!-- Текстовые поля -->
+  <input type="text" name="username" placeholder="Имя" required />
+  <input type="email" name="email" required />
+  <!-- Валидация email -->
+  <input type="password" name="password" minlength="8" />
+
+  <!-- Выбор -->
+  <select name="city">
+    <option value="msk">Москва</option>
+    <option value="spb">Санкт-Петербург</option>
+  </select>
+
+  <!-- Чекбоксы и радиокнопки -->
+  <input type="checkbox" name="subscribe" id="subscribe" checked />
+  <label for="subscribe">Подписаться</label>
+
+  <input type="radio" name="gender" value="male" id="male" />
+  <label for="male">Мужской</label>
+
+  <!-- Файлы -->
+  <input type="file" name="avatar" accept="image/*" />
+
+  <!-- Специальные типы -->
+  <input type="date" name="birthday" />
+  <input type="range" name="volume" min="0" max="100" />
+  <input type="color" name="bgcolor" />
+
+  <!-- Кнопки -->
+  <button type="submit">Отправить</button>
+  <button type="reset">Сбросить</button>
+  <button type="button">Просто кнопка</button>
 </form>
-<!-- Действие: Создает форму с базовой валидацией полей -->
+
+Мультимедиа
+<!-- Изображения -->
+<img
+  src="image.jpg"
+  alt="Описание изображения"
+  width="300"
+  height="200"
+  loading="lazy"
+/>
+
+<!-- Видео -->
+<video controls width="600" poster="preview.jpg">
+  <source src="video.mp4" type="video/mp4" />
+  <source src="video.webm" type="video/webm" />
+  Ваш браузер не поддерживает видео.
+</video>
+
+<!-- Аудио -->
+<audio controls>
+  <source src="audio.mp3" type="audio/mpeg" />
+</audio>
+
+<!-- Ифреймы -->
+<iframe
+  src="https://example.com"
+  title="Пример"
+  width="800"
+  height="600"
+></iframe>
+
+Таблицы
+<table>
+  <caption>
+    Заголовок таблицы
+  </caption>
+  <thead>
+    <tr>
+      <th scope="col">Заголовок 1</th>
+      <th scope="col">Заголовок 2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Ячейка 1</td>
+      <td>Ячейка 2</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td colspan="2">Итог</td>
+    </tr>
+  </tfoot>
+</table>
+
+Списки
+<!-- Маркированный список -->
+<ul>
+  <li>Пункт 1</li>
+  <li>Пункт 2</li>
+</ul>
+
+<!-- Нумерованный список -->
+<ol start="5" reversed type="I">
+  <li>Пункт 5</li>
+  <li>Пункт 4</li>
+</ol>
+
+<!-- Список определений -->
+<dl>
+  <dt>HTML</dt>
+  <dd>Язык гипертекстовой разметки</dd>
+</dl>
+
+<!-- Основные мета-теги -->
+<meta name="description" content="Описание страницы для SEO" />
+<meta name="keywords" content="ключевые, слова" />
+<meta name="author" content="Автор" />
+
+<!-- Open Graph (для соцсетей) -->
+<meta property="og:title" content="Заголовок" />
+<meta property="og:description" content="Описание" />
+<meta property="og:image" content="image.jpg" />
+
+<!-- Каноническая ссылка (для борьбы с дублями) -->
+<link rel="canonical" href="https://example.com/page" />
+
+Доступность (a11y)
+<!-- Атрибуты ARIA -->
+<button aria-label="Закрыть меню">X</button>
+<div role="alert">Важное сообщение</div>
+
+<!-- Правильное использование заголовков -->
+<h1>Главный заголовок</h1>
+<!-- Только один на странице -->
+<h2>Подзаголовок</h2>
+<h3>Подподзаголовок</h3>
+
+<!-- Альтернативный текст -->
+<img src="logo.png" alt="Логотип компании" />
+<figure>
+  <img src="chart.png" alt="График роста продаж" />
+  <figcaption>График роста продаж за 2023 год</figcaption>
+</figure>
+
+Оптимизация и современные возможности
+<!-- Ленивая загрузка изображений -->
+<img src="image.jpg" loading="lazy" alt="..." />
+
+<!-- Элемент picture для адаптивных изображений -->
+<picture>
+  <source media="(min-width: 1200px)" srcset="large.jpg" />
+  <source media="(min-width: 768px)" srcset="medium.jpg" />
+  <img src="small.jpg" alt="Адаптивное изображение" />
+</picture>
+
+<!-- Декларативный прелоад критических ресурсов -->
+<link rel="preload" href="font.woff2" as="font" type="font/woff2" crossorigin />
