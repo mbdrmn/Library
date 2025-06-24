@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>TimerJS</title>
+  </head>
+  <body>
+    <style>
+      body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: bisque;
+        font-family: "Times New Roman", Times, serif;
+      }
+      button {
+        text-align: center;
+        width: 200px;
+        height: 75px;
+        font-family: "Times New Roman", Times, serif;
+        font-size: larger;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      #playBtn {
+        background-color: rgb(34, 182, 34);
+        color: white;
+      }
+      #pauseBtn {
+        background-color: yellow;
+        color: black;
+      }
+      #stopBtn {
+        background-color: rgb(251, 0, 0);
+        color: white;
+      }
+      h2 {
+        text-align: center;
+      }
+      .timer-display {
+        font-size: 75px;
+        margin: 20px 0;
+      }
+      .buttons-container {
+        display: flex;
+        gap: 10px;
+      }
+    </style>
+    <h2>Timer.JS</h2>
+    <div class="timer-display" id="timer">00:00:00</div>
+    <div class="buttons-container">
+      <button type="button" id="playBtn">Play</button>
+      <button type="button" id="pauseBtn">Pause</button>
+      <button type="button" id="stopBtn">Stop</button>
+    </div>
+    <script>
+      class Timer {
+        constructor(displayElement) {
+          this.display = displayElement; //Отображаем таймер на экран
+          this.seconds = 0; //Стартовое количество секунд
+          this.interval = null; //Наш интервал
+          this.isRunning = false; //Так мы предотвращаем повторный старт
+        }
+        start() {
+          //Метод старта таймера
+          if (!this.isRunning) {
+            //Таймер точно остановлен
+            this.isRunning = true; //Отметка запуска
+            this.interval = setInterval(() => {
+              //Запуск интервала с условием прибавления 1ой секунды
+              this.seconds++;
+              this.updateDisplay();
+            }, 1000);
+          }
+        }
+        pause() {
+          if (this.isRunning) {
+            //Если таймер запущен
+            clearInterval(this.interval); //Останавливаем интервал
+            this.isRunning = false; //Меняем статус
+          }
+        }
+        reset() {
+          this.pause();
+          this.seconds = 0;
+          this.updateDisplay();
+        }
+        updateDisplay() {
+          const hours = Math.floor(this.seconds / 3600);
+          const minutes = Math.floor((this.seconds % 3600) / 60);
+          const secs = this.seconds % 60;
+          this.display.textContent =
+            `${hours.toString().padStart(2, "0")}:` +
+            `${minutes.toString().padStart(2, "0")}:` +
+            `${secs.toString().padStart(2, "0")}`;
+        }
+      }
+      const timer = new Timer(document.getElementById("timer")); //Экземпляр таймера
+      const { start, pause, reset } = timer;
+      document
+        .getElementById("playBtn")
+        .addEventListener("click", () => timer.start());
+      document
+        .getElementById("pauseBtn")
+        .addEventListener("click", () => timer.pause());
+      document
+        .getElementById("stopBtn")
+        .addEventListener("click", () => timer.reset());
+    </script>
+  </body>
+</html>
